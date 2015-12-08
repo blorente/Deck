@@ -6,28 +6,28 @@
  *
  */
 
-public class Carta {
+public class Card {
 
-    private E_Carta_Valor valor;
-    private E_Carta_Palo palo;
+    private E_CardValue value;
+    private E_CardSuit suit;
 
-    public Carta(E_Carta_Valor valor, E_Carta_Palo palo) {
-        this.valor = valor;
-        this.palo = palo;
+    public Card(E_CardValue value, E_CardSuit suit) {
+        this.value =  value;
+        this.suit = suit;
     }
 
-    public E_Carta_Valor getValor() {
-        return valor;
+    public E_CardValue getValor() {
+        return value;
     }
 
-    public E_Carta_Palo getPalo() {
-        return palo;
+    public E_CardSuit getPalo() {
+        return suit;
     }
     
     public String toString() {
     	StringBuilder builder = new StringBuilder();
-    	builder.append(this.valor);
-    	builder.append(this.palo);
+    	builder.append(this.value);
+    	builder.append(this.suit);
 		return builder.toString();
     }
 
@@ -46,7 +46,7 @@ public class Carta {
      *     51       | 2s
      */
     public int toInt() {
-        return (13*palo.getIdnum() + (14-valor.getValor()));
+        return (13*suit.getIdnum() + (14-value.getValor()));
     }
 
 }

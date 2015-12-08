@@ -13,7 +13,7 @@ public class Deck {
      *
      * Array with cards in random positions.
      */
-    private Carta[] deck;
+    private Card[] deck;
 
     /**
      * Array with the indexes of all the cards in deck[].
@@ -50,14 +50,14 @@ public class Deck {
      */
     public Deck() {
 
-        deck = new Carta[52];
+        deck = new Card[52];
         indexes = new int[52];
 
         int cardsAdded = 0;
-        for (int palo = 0; palo < 4; palo++) {
-            for (int valor = 14; valor > 1; valor--) {
-                deck[cardsAdded] = new Carta(E_Carta_Valor.getValorPorInt(valor),
-                                                E_Carta_Palo.getPaloPorInt(palo));
+        for (int suit = 0; suit < 4; suit++) {
+            for (int value = 14; value > 1; value--) {
+                deck[cardsAdded] = new Card(E_CardValue.getValueByInt(value),
+                                                E_CardSuit.getSuitByInt(suit));
                 indexes[cardsAdded] = cardsAdded;
                 cardsAdded++;
             }
@@ -104,7 +104,7 @@ public class Deck {
      * @return the card which is removed from the deck.
      * @throws IllegalStateException if there are no cards left in the deck
      */
-    public Carta dealRandomCard() {
+    public Card dealRandomCard() {
         if (cardsUsed == deck.length)
             throw new IllegalStateException("No cards are left in the deck.");
         cardsUsed++;
@@ -118,7 +118,7 @@ public class Deck {
      * Removes the selected card from the deck, by exchanging it with the first unused card.
      * @param card
      */
-    public void removeCard(Carta card) {
+    public void removeCard(Card card) {
 
         if (cardsUsed > indexes[card.toInt()]) {
             throw new IllegalStateException("This card has already been dealt.");
@@ -132,10 +132,10 @@ public class Deck {
         cardsUsed++;
     }
 
-    private void swap(Carta card1, Carta card2) {
+    private void swap(Card card1, Card card2) {
         //Exchange the chosen card with the first unused card.
         //  Swap cards
-        Carta temp = card1;
+        Card temp = card1;
         deck[indexes[card1.toInt()]] = deck[indexes[card2.toInt()]];
         deck[indexes[card2.toInt()]] = temp;
         //  Swap indexes
