@@ -5,22 +5,34 @@ My implementation of a deck of playing cards, designed to minimize the complexit
 
 This implementation allows to get a 52-card deck functionality (no Jokers). It allows to:
 
-	1. Start a new deck with 52 cards:
-	```java
+1. Start a new deck with 52 cards:
+    
+    ```java
     Deck myDeck = new Deck();
     myDeck.shuffle();
     ```
     
-	2. Draw a card at random from the deck:
-	```java
+2. Draw a card at random from the deck:
+    
+    ```java
     Card c = myDeck.dealRandomCard();
     ```
-	3. Remove a named card from the deck:
-	```java
-	Card c = new Card(E_CardValue.ACE, E_CardSuit.CLUBS);
+    
+3. Remove a named card from the deck:
+    
+    ```java
+    Card c = new Card(E_CardValue.ACE, E_CardSuit.CLUBS);
     myDeck.removeCard(c);
     ```
+    
+4. Check how many cards are left:
+
+    ```java
+	int cardsLeft = deck.cardsLeft();
+    ```
+    
 ## Costs and Efficiency
+
 | Method Name | Signature  | Complexity |
 | ----------- | :--------: | :--------: |
 | Constructor | `public Deck()`   |   O(N)     |
