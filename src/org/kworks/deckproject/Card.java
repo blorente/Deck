@@ -1,8 +1,10 @@
+package org.kworks.deckproject;
+
 /**
- * Clase para representar una carta individual.
- * Contiene información sobre el palo y el valor de la carta.
- * E.G: La carta Ah se inicializaría con
- *      new Carta(E_Carta_Palo.HEARTS, E_Carta_Valor.A)
+ * Class that represents an individual card.
+ * Contains information about the suit and the value of a card.
+ * E.G: Ah would be initialized as
+ *      new Card(E_CardValue.A, E_CardSuit.HEARTS)
  *
  */
 
@@ -12,7 +14,7 @@ public class Card {
     private E_CardSuit suit;
 
     public Card(E_CardValue value, E_CardSuit suit) {
-        this.value =  value;
+        this.value = value;
         this.suit = suit;
     }
 
@@ -33,7 +35,7 @@ public class Card {
 
     /**
      *
-     * @return un int que representa a la carta:
+     * @return an integer to represent the card:
      *   return     | carta
      * --------------------------
      *      0       | Ac

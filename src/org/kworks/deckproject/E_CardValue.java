@@ -1,3 +1,4 @@
+package org.kworks.deckproject;
 
 public class E_CardValue {
 
