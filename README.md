@@ -1,4 +1,4 @@
-# org.kworks.deckproject.Deck
+# Deck
 My implementation of a deck of playing cards, designed to minimize the complexity of the operations implemented.
 
 ## Features
